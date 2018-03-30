@@ -1,0 +1,18 @@
+<h1>Sign-up</h1>
+
+<% if flash[:notice] %>
+  <div><%= flash[:notice] %></div>
+<% end %>
+<br />
+
+<%= form_for(@user) do |f| %>
+  Name: <%= f.text_field :name, :required => true %><br />
+  Password: <%= f.password_field :password, :required => true %><br />
+  Confirm Password: <%= f.password_field :password_confirmation, :required => true %><br />
+  How nauseous are you? (1-10 scale) <%= f.text_field :nausea %><br />
+  How happy are you? (1-10 scale) <%= f.text_field :happiness %><br />
+  How many tickets do you have? <%= f.text_field :tickets %><br />
+  What is your height (in inches)? <%= f.text_field :height %><br />
+  Check this box if you are an administrator <%= f.check_box :admin %><br />
+  <%= f.submit 'Create User' %>
+<% end %>

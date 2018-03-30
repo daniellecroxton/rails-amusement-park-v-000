@@ -1,0 +1,10 @@
+<h1>Hello, <%= @user.name %></h1>
+
+<% if flash[:notice] %>
+  <div><%= flash[:notice] %></div>
+<% end %>
+<br />
+
+  Mood: <%= @user.mood %><br />
+  Tickets available: <%= @user.tickets %><br />
+  Height: <%= @user.height %><br />
