@@ -6,7 +6,7 @@
 <br />
 
 <%= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) do %>
-  Name: <%= text_field_tag :name %><br />
-  Password: <%= password_field_tag :password %><br />
+  Name: <%= text_field_tag "user[name]" %><br />
+  Password: <%= password_field_tag "user[password]" %><br />
   <input type=submit value='Sign In'>
 <% end %>
