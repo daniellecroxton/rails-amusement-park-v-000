@@ -3,7 +3,11 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find_by_id(session[:user_id])
+    if logged_in?
+      @user = User.find_by_id(session[:user_id])
+    else
+      redirect_to root_path
+    end
   end
 
   def new
@@ -26,5 +30,9 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name, :password, :password_confirmation, :nausea, :happiness, :tickets, :height, :admin)
+  end
+
+  def logged_in?
+    session.include? :user_id
   end
 end

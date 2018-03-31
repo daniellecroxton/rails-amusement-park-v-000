@@ -8,3 +8,14 @@
   Mood: <%= @user.mood %><br />
   Tickets available: <%= @user.tickets %><br />
   Height: <%= @user.height %><br />
+  <% if @user.admin? %>
+    ADMIN
+  <% end %>
+
+
+  <p>
+    <%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
+      <%= url_field_tag "Log Out", '/logout' %>
+    <!-- <input type=submit value='logout'> -->
+  <% end %>
+  </p>
