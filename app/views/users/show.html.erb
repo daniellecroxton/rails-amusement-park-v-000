@@ -15,7 +15,7 @@
 
   <p>
     <%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
-      <%= url_field_tag "Log Out", '/logout' %>
-    <!-- <input type=submit value='logout'> -->
+      <!-- <%= url_field_tag "Log Out", '/logout' %> -->
+    <input type=submit value='Log Out'>
   <% end %>
   </p>
