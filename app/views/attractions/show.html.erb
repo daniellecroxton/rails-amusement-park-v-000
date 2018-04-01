@@ -1,0 +1,5 @@
+<!-- # <%= form_tag ({controller: 'users', action: 'show', method: 'get'}) do %>
+#   <input type=submit value='Go on this ride'>
+# <% end %> -->
+
+<%= button_to "Go on this ride", user_path(@user), :method => "get" %>
