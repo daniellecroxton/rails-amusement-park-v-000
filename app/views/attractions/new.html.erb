@@ -1,0 +1,15 @@
+<h1>Add Attraction</h1>
+
+<% if flash[:notice] %>
+  <div><%= flash[:notice] %></div>
+<% end %>
+<br />
+
+<%= form_for(@attraction) do |f| %>
+  Name: <%= f.text_field :name, :required => true %><br />
+  Nausea Rating: <%= f.text_field :nausea_rating, :required => true %><br />
+  Happiness Rating: <%= f.text_field :happiness_rating, :required => true %><br />
+  Tickets Required: <%= f.text_field :tickets, :required => true %><br />
+  Minimum Height: <%= f.text_field :min_height, :required => true %><br />
+  <%= f.submit 'Create Attraction' %>
+<% end %>
